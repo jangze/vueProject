@@ -1,85 +1,14 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <div class="background"></div>
+    <div class="zindex1">
+      <h1>{{ msg }}</h1>
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span>登录</span>
+        </div>
+      </el-card>
+    </div>
   </div>
 </template>
 
@@ -88,7 +17,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your NER Site'
     }
   }
 }
@@ -96,18 +25,34 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
+.hello{
+  border: 1px solid transparent;
+  margin: 0;
   padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.background{
+  position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  background:transparent url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg0.ddove.com%2Fupload%2F20091227%2F271057191644.jpg&refer=http%3A%2F%2Fimg0.ddove.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1635995871&t=92dcedd9ff94104085f91238c04e2271') center center no-repeat;
+  background-size: 100%;
+  filter:blur(3px);
 }
-a {
-  color: #42b983;
+.zindex1{
+  position: fixed;
+  z-index: 2;
+  top:40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h1{
+  filter: drop-shadow(8px, 8px, 6px #333);
+}
+.box-card{
+  height: 260px;
+  width: 400px;
 }
 </style>
