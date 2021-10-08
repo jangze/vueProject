@@ -21,9 +21,10 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "indent": ["off", 2],
-    'no-tabs': 0,
     'eol-last': 0,
+    'semi' : 0,
+    'indent': 0,
+    'no-tabs': "off",
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
