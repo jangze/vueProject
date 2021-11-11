@@ -17,7 +17,7 @@
                 </el-menu>
             </el-aside>
             <el-main>
-                <div class="right-container">
+                <!-- <div class="right-container">
                     <div class="input-area">
                         <el-input
                             class="input-item"
@@ -43,7 +43,8 @@
                             disabled>
                         </el-input>
                     </div>
-                </div>
+                </div> -->
+                <nermodel/>
             </el-main>
         </el-container>
         <!-- <el-radio-group v-model="isCollapse" >
@@ -54,7 +55,11 @@
     </div>
 </template>
 <script>
+import nermodel from '@/components/NerModel.vue'
+
 export default {
+    name: 'homepage',
+    components: { nermodel },
     data () {
         return {
             isCollapse: false,
@@ -65,6 +70,10 @@ export default {
     methods: {
         toLogin () {
             this.$router.replace('/')
+        },
+        handleOpen () {
+        },
+        handleClose () {
         }
     }
 }

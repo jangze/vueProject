@@ -44,7 +44,6 @@
 
 <script>
 import background from '@/components/Background.vue'
-// import Background from './Background.vue'
 export default {
   components: { background },
   name: 'HelloWorld',
