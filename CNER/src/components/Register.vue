@@ -7,6 +7,14 @@
         <span>用户注册</span>
       </div>
       <div class="">
+        <el-select class="input-item" v-model="value" placeholder="请选择账户类型" clearable>
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
         <el-input
           class="input-item"
           placeholder="请输入账号"
@@ -27,7 +35,7 @@
           placeholder="请再次输入密码"
           prefix-icon="el-icon-lock"
           show-password
-          v-model="userPassword"
+          v-model="userPassword2"
         >
         </el-input>
       </div>
@@ -47,7 +55,19 @@ export default {
   components: { background },
   name: 'Register',
   data () {
-    return {};
+    return {
+      options: [{
+        value: '医生',
+        label: '医生'
+      }, {
+        value: '用户',
+        label: '用户'
+      }],
+      value: '',
+      userAccount: '',
+      userPassword: '',
+      userPassword2: ''
+    };
   },
   methods: {
     toLoginPage () {
@@ -83,7 +103,7 @@ h1{
 }
 .box-card{
   text-align: center;
-  height: 360px;
+  height: 400px;
   width: 400px;
 }
 .clearfix{

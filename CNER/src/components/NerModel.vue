@@ -1,6 +1,16 @@
 <template>
   <div class="right-container">
     <div class="input-area">
+      <div style="margin-bottom: 20px">
+        <el-select v-model="modelSelect" placeholder="请选择算法模型">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value">
+        </el-option>
+      </el-select>
+      </div>
       <el-input
         class="input-item"
         type="textarea"
@@ -70,7 +80,15 @@ export default {
         'SID': '不良反应',
         'LEV': '程度',
         'DUR': '持续时间'
-      }
+      },
+      options: [{
+        value: 'BERT-PCA-BiLSTM-CRF',
+        label: 'BERT-PCA-BiLSTM-CRF'
+      }, {
+        value: 'BiLSTM-GCN-CRF',
+        label: 'BiLSTM-GCN-CRF'
+      }],
+      modelSelect: ''
     };
   },
   methods: {
@@ -102,8 +120,8 @@ export default {
   margin: 30px 0px;
 }
 .input-item {
-  min-width: 600px;
-  max-width: 800px;
+  min-width: 1000px;
+  max-width: 1200px;
 }
 .el-button1 {
   margin: 20px 0px;

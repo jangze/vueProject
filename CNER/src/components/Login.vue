@@ -3,7 +3,7 @@
     <!-- <div class="background"></div> -->
     <background/>
     <div class="zindex1">
-      <h1>{{ msg }}</h1>
+      <h1><center>{{ msg }}</center></h1>
       <el-card class="box-card">
         <div slot="header" class="clearfix">
           <span>用户登录</span>
@@ -13,6 +13,8 @@
             class="input-item"
             placeholder="请输入账号"
             prefix-icon="el-icon-user"
+            min="6"
+            max="16"
             v-model="userAccount">
           </el-input>
           <el-input
@@ -49,14 +51,19 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your NER Site',
+      msg: '医疗实体识别系统',
       userAccount: '',
       userPassword: ''
     }
   },
   methods: {
     login () {
-      this.$router.push('/homePage')
+        if (this.userAccount === 'admin') {
+            this.$store.commit('CHANGE_USER', 'doctor')
+        } else {
+            this.$store.commit('CHANGE_USER', 'other')
+        }
+      this.$router.push('/homePage/nerModel')
     },
     toRegister () {
       this.$router.replace('/register')
